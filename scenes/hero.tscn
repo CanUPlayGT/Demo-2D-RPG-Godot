@@ -7,18 +7,17 @@ script/source = "extends CharacterBody2D
 
 @export_category(\"Stats\")
 @export var speed : int = 480
-
 var move_direction : Vector2 = Vector2.ZERO
+var sprite_direction : String = \"down\"
+@onready  var animated_sprite := $AnimatedSprite2D
 
 
 func _physics_process(_delta: float) -> void:
 	movement_loop()
  
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var animation := $AnimatedSprite2D
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	pass
+	
 func _process(_delta: float) -> void:
 	pass
 
@@ -27,6 +26,22 @@ func movement_loop() -> void:
 	velocity = move_direction * speed
 	move_and_slide()
 	
+	match move_direction:
+		Vector2.RIGHT:
+			sprite_direction = \"right\"
+			animated_sprite.flip_h = false
+		Vector2.LEFT:
+			sprite_direction = \"right\"
+			animated_sprite.flip_h = true			
+		Vector2.UP:
+			sprite_direction = \"up\"		
+		Vector2.DOWN:
+			sprite_direction = \"down\"
+	
+	if move_direction != Vector2.ZERO:
+		animated_sprite.play(\"move_\" + sprite_direction)
+	else:
+		animated_sprite.play(\"idle_\" + sprite_direction)
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yvbpl"]
@@ -130,27 +145,27 @@ region = Rect2(240, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rpah5"]
 atlas = ExtResource("1_3uyx6")
-region = Rect2(0, 48, 48, 48)
+region = Rect2(0, 192, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kg8r"]
 atlas = ExtResource("1_3uyx6")
-region = Rect2(48, 48, 48, 48)
+region = Rect2(48, 192, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ul70"]
 atlas = ExtResource("1_3uyx6")
-region = Rect2(96, 48, 48, 48)
+region = Rect2(96, 192, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_61g13"]
 atlas = ExtResource("1_3uyx6")
-region = Rect2(144, 48, 48, 48)
+region = Rect2(144, 192, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7l7r2"]
 atlas = ExtResource("1_3uyx6")
-region = Rect2(192, 48, 48, 48)
+region = Rect2(192, 192, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nh6g3"]
 atlas = ExtResource("1_3uyx6")
-region = Rect2(240, 48, 48, 48)
+region = Rect2(240, 192, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8v78m"]
 atlas = ExtResource("1_3uyx6")
@@ -326,8 +341,8 @@ shape = SubResource("CircleShape2D_yvbpl")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=790478161]
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_syei6")
-animation = &"move_up"
-frame = 3
-frame_progress = 0.5331804
+animation = &"move_right"
+frame_progress = 0.76533884
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1057232617]
+zoom = Vector2(2, 2)
