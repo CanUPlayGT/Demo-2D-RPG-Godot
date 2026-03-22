@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://dak5163mgg2v"]
+
+[ext_resource type="Texture2D" uid="uid://dabivrchsp15j" path="res://sprites/sprite.png" id="1_yvbpl"]
+[ext_resource type="Texture2D" uid="uid://b5tdi1om2hycy" path="res://sprites/sprite_run.png" id="2_06baw"]
+
+[sub_resource type="GDScript" id="GDScript_3uyx6"]
+script/source = "extends CharacterBody2D
+
+@export_category(\"Stats\")
+@export var speed : int = 480
+var move_direction : Vector2 = Vector2.ZERO
+
+@onready  var animated_sprite := $AnimatedSprite2D
+
+
+func _physics_process(_delta: float) -> void:
+	movement_loop()
+ 
+func _ready() -> void:
+	pass
+	
+func _process(_delta: float) -> void:
+	pass
+
+func movement_loop() -> void:
+	
+	move_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	
+	animated_sprite.flip_h = (
+		animated_sprite.flip_h 
+		if move_direction.x == 0 
+		else true if move_direction.x < 0 
+		else false
+	)
+
+	#match move_direction:
+		#Vector2.RIGHT:
+			#sprite_direction = \"right\"
+			#animated_sprite.flip_h = false
+		#Vector2.LEFT:
+			#sprite_direction = \"right\"
+			#animated_sprite.flip_h = true			
+		#Vector2.UP:
+			#sprite_direction = \"up\"		
+		#Vector2.DOWN:
+			#sprite_direction = \"down\"
+	
+	play_move_animation(\"down\")
+	
+	velocity = move_direction * speed
+	move_and_slide()
+	
+func play_move_animation(direction) -> void:
+	if move_direction != Vector2.ZERO:
+		animated_sprite.play(\"move_\" + direction)
+	else:
+		animated_sprite.play(\"idle_\" + direction)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvbpl"]
+size = Vector2(11, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv13s"]
+atlas = ExtResource("1_yvbpl")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7pyx"]
+atlas = ExtResource("1_yvbpl")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2sko"]
+atlas = ExtResource("1_yvbpl")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo806"]
+atlas = ExtResource("1_yvbpl")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n40cg"]
+atlas = ExtResource("2_06baw")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txblw"]
+atlas = ExtResource("2_06baw")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5qna"]
+atlas = ExtResource("2_06baw")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6xj2"]
+atlas = ExtResource("2_06baw")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_syei6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv13s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7pyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2sko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo806")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv13s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7pyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2sko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo806")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv13s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7pyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2sko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo806")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n40cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txblw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5qna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6xj2")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n40cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txblw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5qna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6xj2")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n40cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txblw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5qna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6xj2")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 8.0
+}]
+
+[node name="Hero" type="CharacterBody2D" unique_id=1343834746]
+script = SubResource("GDScript_3uyx6")
+speed = 200
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=30585878]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_yvbpl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=790478161]
+position = Vector2(0, -11)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_syei6")
+animation = &"move_up"
+frame_progress = 0.999461
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1057232617]
+zoom = Vector2(3, 3)
