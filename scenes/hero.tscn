@@ -1,61 +1,8 @@
 [gd_scene format=3 uid="uid://dak5163mgg2v"]
 
+[ext_resource type="Script" uid="uid://ctqytefpsa4o" path="res://scenes/hero.gd" id="1_06baw"]
 [ext_resource type="Texture2D" uid="uid://dabivrchsp15j" path="res://sprites/sprite.png" id="1_yvbpl"]
 [ext_resource type="Texture2D" uid="uid://b5tdi1om2hycy" path="res://sprites/sprite_run.png" id="2_06baw"]
-
-[sub_resource type="GDScript" id="GDScript_3uyx6"]
-script/source = "extends CharacterBody2D
-
-@export_category(\"Stats\")
-@export var speed : int = 480
-var move_direction : Vector2 = Vector2.ZERO
-
-@onready  var animated_sprite := $AnimatedSprite2D
-
-
-func _physics_process(_delta: float) -> void:
-	movement_loop()
- 
-func _ready() -> void:
-	pass
-	
-func _process(_delta: float) -> void:
-	pass
-
-func movement_loop() -> void:
-	
-	move_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
-	
-	animated_sprite.flip_h = (
-		animated_sprite.flip_h 
-		if move_direction.x == 0 
-		else true if move_direction.x < 0 
-		else false
-	)
-
-	#match move_direction:
-		#Vector2.RIGHT:
-			#sprite_direction = \"right\"
-			#animated_sprite.flip_h = false
-		#Vector2.LEFT:
-			#sprite_direction = \"right\"
-			#animated_sprite.flip_h = true			
-		#Vector2.UP:
-			#sprite_direction = \"up\"		
-		#Vector2.DOWN:
-			#sprite_direction = \"down\"
-	
-	play_move_animation(\"down\")
-	
-	velocity = move_direction * speed
-	move_and_slide()
-	
-func play_move_animation(direction) -> void:
-	if move_direction != Vector2.ZERO:
-		animated_sprite.play(\"move_\" + direction)
-	else:
-		animated_sprite.play(\"idle_\" + direction)
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvbpl"]
 size = Vector2(11, 7)
@@ -198,8 +145,7 @@ animations = [{
 }]
 
 [node name="Hero" type="CharacterBody2D" unique_id=1343834746]
-script = SubResource("GDScript_3uyx6")
-speed = 200
+script = ExtResource("1_06baw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=30585878]
 position = Vector2(-0.5, -0.5)
@@ -210,7 +156,7 @@ position = Vector2(0, -11)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_syei6")
 animation = &"move_up"
-frame_progress = 0.999461
+frame_progress = 0.7787083
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1057232617]
 zoom = Vector2(3, 3)
