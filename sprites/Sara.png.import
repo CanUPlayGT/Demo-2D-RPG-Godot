@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://evuhdrme24e1"
-path="res://.godot/imported/forest_ [bridgeHorizontal].png-9fd1fda9221a1341779544cad45e6c0c.ctex"
+uid="uid://b1muags52gpxc"
+path="res://.godot/imported/Sara.png-f5e72f48e3d44bf0849e924d391064e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/forest_/forest_ [bridgeHorizontal].png"
-dest_files=["res://.godot/imported/forest_ [bridgeHorizontal].png-9fd1fda9221a1341779544cad45e6c0c.ctex"]
+source_file="res://sprites/Sara.png"
+dest_files=["res://.godot/imported/Sara.png-f5e72f48e3d44bf0849e924d391064e0.ctex"]
 
 [params]
 

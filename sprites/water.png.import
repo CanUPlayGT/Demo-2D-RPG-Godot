@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crxt7m35dveel"
-path="res://.godot/imported/forestPath_.png-fd360ddab465c4cb7ef0242cda73e11e.ctex"
+uid="uid://ut4co3cejk4h"
+path="res://.godot/imported/water.png-31009146f73da861d68bb8ecbdb2c273.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/forest_/forestPath_.png"
-dest_files=["res://.godot/imported/forestPath_.png-fd360ddab465c4cb7ef0242cda73e11e.ctex"]
+source_file="res://sprites/water.png"
+dest_files=["res://.godot/imported/water.png-31009146f73da861d68bb8ecbdb2c273.ctex"]
 
 [params]
 
