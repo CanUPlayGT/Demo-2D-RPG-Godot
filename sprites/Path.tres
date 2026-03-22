@@ -1,0 +1,69 @@
+[gd_resource type="TileSet" format=3 uid="uid://cev6bbbxmbexs"]
+
+[ext_resource type="Texture2D" uid="uid://514750ck43dx" path="res://sprites/mountain_landscape.png" id="1_87wle"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_30pmq"]
+texture = ExtResource("1_87wle")
+texture_region_size = Vector2i(32, 32)
+13:2/0 = 0
+13:2/0/terrain_set = 0
+13:2/0/terrains_peering_bit/top_left_corner = 0
+12:2/0 = 0
+12:2/0/terrain_set = 0
+12:2/0/terrains_peering_bit/top_left_corner = 0
+12:2/0/terrains_peering_bit/top_right_corner = 0
+11:2/0 = 0
+11:2/0/terrain_set = 0
+11:2/0/terrains_peering_bit/top_right_corner = 0
+11:1/0 = 0
+11:1/0/terrain_set = 0
+11:1/0/terrains_peering_bit/bottom_right_corner = 0
+11:1/0/terrains_peering_bit/top_right_corner = 0
+11:0/0 = 0
+11:0/0/terrain_set = 0
+11:0/0/terrains_peering_bit/bottom_right_corner = 0
+12:0/0 = 0
+12:0/0/terrain_set = 0
+12:0/0/terrains_peering_bit/bottom_right_corner = 0
+12:0/0/terrains_peering_bit/bottom_left_corner = 0
+13:0/0 = 0
+13:0/0/terrain_set = 0
+13:0/0/terrains_peering_bit/bottom_left_corner = 0
+13:1/0 = 0
+13:1/0/terrain_set = 0
+13:1/0/terrains_peering_bit/bottom_left_corner = 0
+13:1/0/terrains_peering_bit/top_left_corner = 0
+12:1/0 = 0
+12:1/0/terrain_set = 0
+12:1/0/terrain = 0
+12:1/0/terrains_peering_bit/bottom_right_corner = 0
+12:1/0/terrains_peering_bit/bottom_left_corner = 0
+12:1/0/terrains_peering_bit/top_left_corner = 0
+12:1/0/terrains_peering_bit/top_right_corner = 0
+14:6/0 = 0
+14:6/0/terrain_set = 0
+14:6/0/terrains_peering_bit/bottom_right_corner = 0
+14:6/0/terrains_peering_bit/bottom_left_corner = 0
+14:6/0/terrains_peering_bit/top_right_corner = 0
+14:7/0 = 0
+14:7/0/terrain_set = 0
+14:7/0/terrains_peering_bit/bottom_right_corner = 0
+14:7/0/terrains_peering_bit/top_left_corner = 0
+14:7/0/terrains_peering_bit/top_right_corner = 0
+15:7/0 = 0
+15:7/0/terrain_set = 0
+15:7/0/terrains_peering_bit/bottom_left_corner = 0
+15:7/0/terrains_peering_bit/top_left_corner = 0
+15:7/0/terrains_peering_bit/top_right_corner = 0
+15:6/0 = 0
+15:6/0/terrain_set = 0
+15:6/0/terrains_peering_bit/bottom_right_corner = 0
+15:6/0/terrains_peering_bit/bottom_left_corner = 0
+15:6/0/terrains_peering_bit/top_left_corner = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 1
+terrain_set_0/terrain_0/name = "Path"
+terrain_set_0/terrain_0/color = Color(0.12274537, 0.4128118, 0.5782015, 1)
+sources/2 = SubResource("TileSetAtlasSource_30pmq")

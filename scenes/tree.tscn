@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bht7c0efp7ed8"]
+
+[ext_resource type="Texture2D" uid="uid://514750ck43dx" path="res://sprites/mountain_landscape.png" id="2_vplca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avsvi"]
+size = Vector2(36, 30)
+
+[node name="Tree" type="StaticBody2D" unique_id=1045522236]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=475520845]
+position = Vector2(1, -15)
+shape = SubResource("RectangleShape2D_avsvi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1445600390]
+position = Vector2(0, -65)
+texture = ExtResource("2_vplca")
+region_enabled = true
+region_rect = Rect2(128, 384, 96, 128)
