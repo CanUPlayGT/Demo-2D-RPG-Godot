@@ -175,16 +175,16 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_rv78h")
 dialogue_file_path = "res://dialogue/npc.json"
 
-[node name="Shadow" type="Sprite2D" parent="." unique_id=776881711]
-modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(0, -3.9999993)
-scale = Vector2(0.5625, 0.515625)
-texture = ExtResource("1_abqhh")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1776399569]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_d56e8")
 animation = &"idle"
+
+[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D" unique_id=776881711]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(-9.536743e-07, 22)
+scale = Vector2(0.78125, 0.69531244)
+texture = ExtResource("1_abqhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1984015354]
 position = Vector2(0, -8)

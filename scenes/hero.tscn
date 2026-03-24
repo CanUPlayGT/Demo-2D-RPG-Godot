@@ -56,6 +56,42 @@ region = Rect2(0, 0, 24, 32)
 atlas = ExtResource("3_mv13s")
 region = Rect2(48, 0, 24, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_txblw"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(96, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5qna"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(72, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6xj2"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(120, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuux7"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(96, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m75t"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(72, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syei6"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(120, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvoeo"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85qs6"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc88v"]
+atlas = ExtResource("3_mv13s")
+region = Rect2(120, 0, 24, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_syei6"]
 animations = [{
 "frames": [{
@@ -132,6 +168,57 @@ animations = [{
 "loop": true,
 "name": &"move_up",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txblw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5qna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txblw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6xj2")
+}],
+"loop": true,
+"name": &"run_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuux7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m75t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuux7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syei6")
+}],
+"loop": true,
+"name": &"run_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvoeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85qs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvoeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc88v")
+}],
+"loop": true,
+"name": &"run_up",
+"speed": 5.0
 }]
 
 [node name="Hero" type="CharacterBody2D" unique_id=1343834746]
@@ -146,7 +233,7 @@ shape = SubResource("CapsuleShape2D_06baw")
 position = Vector2(1.5777218e-30, -12)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_syei6")
-animation = &"move_up"
+animation = &"run_down"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1057232617]
 zoom = Vector2(5, 5)

@@ -10,7 +10,6 @@ border_width_right = 2
 border_width_bottom = 2
 
 [node name="DialoguePlayer" type="CanvasLayer" unique_id=1384368843]
-visible = false
 script = ExtResource("1_anurw")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1484417484]

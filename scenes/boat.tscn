@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://da5vkjeox0pjn"]
+
+[ext_resource type="Texture2D" uid="uid://biyqrc0xhfqd7" path="res://sprites/rowboat.png" id="1_0063d"]
+
+[node name="Boat" type="StaticBody2D" unique_id=1670061232]
+collision_priority = 2.0
+
+[node name="Boat" type="Sprite2D" parent="." unique_id=175971268]
+texture = ExtResource("1_0063d")
+region_enabled = true
+region_rect = Rect2(98, 17, 93, 45)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1564561838]
+scale = Vector2(4.7766023, 2.4411304)
+build_mode = 1
+polygon = PackedVector2Array(-9.83963, 6.5543404, -9.83963, -5.735048, -3.768369, -9.012218, 1.6748307, -9.4218645, 7.327384, -7.7832794, 9.211569, -6.1446943, 10.048985, -4.9157553, 10.258338, -2.867524, 9.211569, 3.6868165, 6.0712614, 5.3254013, 3.768369, 2.867524, 7.536738, -1.2289388, 9.002214, -4.9157553, 6.280615, -6.9639864, 3.3496614, -7.373633, -3.3496614, -7.373633, -8.1648, -5.3254013, -7.955446, 4.0964627, -2.7215998, 4.0964627, -3.1403074, 9.012218)

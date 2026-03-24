@@ -1,16 +1,18 @@
 extends CanvasLayer
 
+signal dialogue_opened
 signal dialogue_finished
 
 @onready var name_label : Label = $MarginContainer/Panel/VBoxContainer/Label
 @onready var content : RichTextLabel = $MarginContainer/Panel/VBoxContainer/MarginContainer/RichTextLabel
 
-var current_dialogue_id : int = 0
 var dialogue : Array 
+var current_dialogue_id : int = 0
 var is_playing := false
 
 func _process(_delta: float) -> void:
 		if is_playing:
+			dialogue_opened.emit()
 			visible = true
 			if Input.is_action_just_pressed("interact"):
 				next_dialogue()
