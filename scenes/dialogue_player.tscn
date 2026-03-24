@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://buh5ju0u1yrmc"]
+
+[ext_resource type="Script" uid="uid://d3x4dxj8cme5c" path="res://scripts/dialoge_player.gd" id="1_anurw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyykt"]
+bg_color = Color(0, 0, 0, 0.5764706)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="DialoguePlayer" type="CanvasLayer" unique_id=1384368843]
+visible = false
+script = ExtResource("1_anurw")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1484417484]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -332.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1319424266]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dyykt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel" unique_id=1239569401]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1854.0
+offset_bottom = 267.0
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer" unique_id=138384977]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Name:"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer" unique_id=1111603006]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer/MarginContainer" unique_id=1870811705]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "The Quick Brown Fox Jumps Over The Lazy Dog"
+fit_content = true
+scroll_active = false

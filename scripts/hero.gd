@@ -1,3 +1,5 @@
+class_name Player
+
 extends CharacterBody2D
 
 @export_category("Stats")
@@ -5,7 +7,7 @@ extends CharacterBody2D
 var move_direction : Vector2 = Vector2.ZERO
 
 # Initial sprite direction
-var sprite_direction = "down"
+var sprite_direction : String = "down"
 @onready  var animated_sprite := $AnimatedSprite2D
 
 
@@ -47,7 +49,7 @@ func movement_loop() -> void:
 	velocity = move_direction * speed
 	move_and_slide()
 	
-func play_move_animation(direction) -> void:
+func play_move_animation(direction : String) -> void:
 	if move_direction != Vector2.ZERO:
 		animated_sprite.play("move_" + direction)
 	else:

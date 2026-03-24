@@ -1,5 +1,6 @@
-[gd_scene format=3 uid="uid://bht7c0efp7ed8"]
+[gd_scene format=3 uid="uid://bjxy3q4oxutai"]
 
+[ext_resource type="Texture2D" uid="uid://budwb3hv3ipiw" path="res://sprites/shadow.png" id="1_vplca"]
 [ext_resource type="Texture2D" uid="uid://514750ck43dx" path="res://sprites/mountain_landscape.png" id="2_vplca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avsvi"]
@@ -7,6 +8,14 @@ size = Vector2(36, 30)
 
 [node name="Tree" type="StaticBody2D" unique_id=1045522236]
 scale = Vector2(0.5, 0.5)
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=699623501]
+modulate = Color(1, 1, 1, 0.39215687)
+z_index = -1
+z_as_relative = false
+position = Vector2(2.3841858e-07, -10.000001)
+scale = Vector2(2.9375, 1.75)
+texture = ExtResource("1_vplca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=475520845]
 position = Vector2(1, -15)
